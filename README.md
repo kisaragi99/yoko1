@@ -1,6 +1,6 @@
-# yoko
-## Django+Docker
-
+#### Stack:
+- Django
+- Docker
 
 ##### Инструкция для запуска бэкэнда:
 
@@ -20,10 +20,11 @@
 7) Положить контейнеры - docker-compose stop
 
 
-
-
 ## What have been done:
 
 1) Wrapped django app in docker container
 2) Used dotenv for dynamic credentials (need to create .env file manually)
-3)
+
+
+instruction for django and docker
+==https://docs.docker.com/samples/django/==
