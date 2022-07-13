@@ -1,9 +1,12 @@
+DOCKER=docker-compose
+
 .PHONY: init up down
 
-init: up
+init:
+	$(DOCKER) up -d --build
 
 up:
-	docker-compose up -d --build
+	$(DOCKER) up -d
 
 down:
-	docker-compose down --remove-orphans
+	$(DOCKER) down --remove-orphans
