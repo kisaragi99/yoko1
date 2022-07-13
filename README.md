@@ -1,8 +1,8 @@
 # yoko
-##Django+Docker
+## Django+Docker
 
 
-#####Инструкция для запуска бэкэнда:
+##### Инструкция для запуска бэкэнда:
 
 ==Важно!==
 
@@ -18,3 +18,12 @@
 5) В браузере заходим на http://localhost:8000/
 6) Проверяем есть ли посередине надпись "The install worked successfully! Congratulations!"
 7) Положить контейнеры - docker-compose stop
+
+
+
+
+## What have been done:
+
+1) Wrapped django app in docker container
+2) Used dotenv for dynamic credentials (need to create .env file manually)
+3)
