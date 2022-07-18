@@ -3,11 +3,8 @@ from django.http import HttpResponse, FileResponse
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
-
 def home(request):
     return HttpResponse('Home page')
-
 
 def show_default_image(request):
     IMG = 'imgaes/media/default.gif'
@@ -16,7 +13,6 @@ def show_default_image(request):
     image_data = open(PATH, 'rb')
 
     return FileResponse(image_data)
-
 
 def show_image(request, image_name='Tomato.png'):
     if image_name == 'tomato':
