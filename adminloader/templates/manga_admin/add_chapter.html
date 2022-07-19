@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new chapter</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    
+</head>
+
+
+
+
+<body class="m-5">
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <a href = "{% url 'main' %}" class="btn btn-primary my-3">Назад</a>
+                <div class="card">
+
+
+
+
+                    <form method="POST" action="" enctype="multipart/form-data"> 
+
+                        <div class="form-group m-3">
+                            <label>"Название тайтла"</label>
+                        </div>
+
+                        <div class="form-group m-3">
+                            <label>Название главы</label>
+                            <input required name="title_name" type="text" placeholder="Введи название главы" class="form-control">
+                        </div>
+
+                        <div class="form-group m-3">
+                            <label>Новые страницы</label>
+                            <input required name="title_pic"type="file" class="form-control-file">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary m-3">Загрузить</button>
+                    
+                    </form>
+                </div>
+            </div>          
+        </div>
+
+    </div>
+</body>
+
+
+
+
+</html>
