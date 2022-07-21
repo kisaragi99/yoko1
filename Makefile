@@ -1,6 +1,7 @@
 DOCKER=docker-compose
+DB=python3 manage.py
 
-.PHONY: init up down
+.PHONY: init up down makemigrations migrate
 
 init:
 	@$(DOCKER) up -d --build
@@ -10,3 +11,9 @@ up:
 
 down:
 	@$(DOCKER) down --remove-orphans
+
+makemigrations:
+	@$(DB) makemigrations adminloader
+
+migrate:
+	@$(DB) migrate adminloader

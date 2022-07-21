@@ -9,9 +9,10 @@ class Category(models.Model):
         return self.name
 
 class Title(models.Model):
-    title_name = models.TextField()
-    pic = models.ImageField(null=False, blank=False)
+    name = models.TextField()
+    description = models.TextField()
+    cover = models.ImageField(null=False, blank=False)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
-        return self.title_name
+        return self.name

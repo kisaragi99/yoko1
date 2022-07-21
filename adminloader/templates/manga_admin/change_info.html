@@ -6,14 +6,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add new manga</title>
+    <title>Change manga info</title>
 
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     
 </head>
-
+ 
 
 <body class="m-5">
     <div class="container">
@@ -28,44 +28,39 @@
 
                         <div class="form-group m-3">
                             <label>Название тайтла</label>
-                            <input required name="name" type="text" placeholder="Введи название тайтла" class="form-control">
+                            <input name="name" type="text" value="{{title.name}}" class="form-control">
                         </div>
-                        
-                
+
+
 
                         <div class="form-group m-3">
                             <label for="exampleFormControlTextarea1">Описание</label>
-                            <textarea name="description"class="form-control" id="exampleFormControlTextarea1" 
-                            rows="3" placeholder="Введи описание" required ></textarea>
+                            <textarea name="description" class="form-control" id="exampleFormControlTextarea1" 
+                            rows="25" required >{{title.description}}</textarea>
                         </div>
-
-
 
                         <div class="form-group m-3">
                             <label>Категория</label>
                             <select name="title_category" class="form-control">
-                                <option value="none">Выбери категорию...</option>
+                                <option value="{{title.category.id}}">{{title.category}}</option>
 
                                 {% for category in categories %}
-                                    <option value="{{category.id}}">{{category.name}}</option>
+                                    {% if category != title.category %}
+                                        <option value="{{category.id}}">{{category.name}}</option>
+                                    {% endif %}
                                 {% endfor %}
                             </select>
                         </div>
 
-
-                        <div class="form-group m-3">
-                            <label>Создать новую категорию</label>
-                            <input name="title_category_new" type="text" placeholder="Создать новую категорию" class="form-control">
-                        </div>
-
-
-
                         <div class="form-group m-3">
                             <label>Обложка</label>
-                            <input required name="title_cover"type="file" class="form-control-file">
+                            <div class = "form-group">
+                                <img class="image-thumbnail my-3" src="{{title.cover.url}}" alt="Card image cap">
+                                <input name="cover" type="file" value="" class="form-control-file m-3">
+                            </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary m-3">Создать</button>
+                        <button type="submit" class="btn btn-primary m-3">Сохранить изменения</button>
                     
                     </form>
                 </div>
