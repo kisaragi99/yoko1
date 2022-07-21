@@ -1,17 +1,9 @@
 version: "3.9"
    
 services:
-  db:
-    image: postgres
-    volumes:
-      - ./data/db:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_DB=${PG_DATABASE}
-      - POSTGRES_USER=${PG_USERNAME}
-      - POSTGRES_PASSWORD=${PG_PASSWORD}
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python3 manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
     ports:
@@ -20,5 +12,3 @@ services:
       - POSTGRES_NAME=${PG_DATABASE}
       - POSTGRES_USER=${PG_USERNAME}
       - POSTGRES_PASSWORD=${PG_PASSWORD}
-    depends_on:
-      - db
